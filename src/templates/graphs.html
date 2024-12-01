@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Classification Model - Graphs</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="left-links">
+          <a href="/about.html">Home</a>
+        </div>
+        <div class="right-links">
+          <a href="/">Make Prediction</a>
+          <a href="/graphs.html" class="active">Graphs</a>
+          <a href="/retrain.html">Retrain</a>
+        </div>
+      </nav>
+
+      <header>
+        <h1>Animals Classification Model</h1>
+      </header>
+      <div class="content">
+        <h2>Classification Results Graphs</h2>
+        <div class="graph-section">
+          <!-- Images displayed in a grid -->
+          <div class="graph-grid">
+            <!-- Confusion Matrix -->
+            <figure>
+              <img
+                src="{{ url_for('static', filename='assets/Screenshot 2024-11-29 043955.png') }}"
+                alt="Confusion Matrix"
+                class="graph"
+              />
+              <figcaption>
+                <h3>Confusion Matrix</h3>
+                This confusion matrix illustrates the performance of your
+                classification model on the test dataset. - Wild category: 40
+                images were correctly predicted as "Wild," while 7 were
+                misclassified as "Domestic." - Domestic category: 19 images were
+                correctly classified, but 9 were incorrectly identified as
+                "Wild." The matrix helps identify patterns in model errors and
+                evaluate precision, recall, and overall accuracy.
+              </figcaption>
+            </figure>
+
+            <!-- Model Accuracy -->
+            <figure>
+              <img
+                src="{{ url_for('static', filename='assets/Screenshot 2024-11-29 044315.png') }}"
+                alt="Model Accuracy Graph"
+                class="graph"
+              />
+              <figcaption>
+                <h3>Model Accuracy</h3>
+                This plot shows how the accuracy of the model evolves during
+                training: - The blue line (Train Accuracy) represents accuracy
+                on the training dataset, steadily increasing, which shows the
+                model is learning. - The orange line (Validation Accuracy)
+                tracks the model's performance on unseen validation data. A
+                steady rise in both lines reflects good model performance and
+                suggests minimal overfitting.
+              </figcaption>
+            </figure>
+
+            <!-- Model Loss -->
+            <figure>
+              <img
+                src="{{ url_for('static', filename='assets/Screenshot 2024-11-29 044333.png') }}"
+                alt="Model Loss Graph"
+                class="graph"
+              />
+              <figcaption>
+                <h3>Model Loss</h3>
+                This plot visualizes the reduction in error during training: -
+                The blue line (Train Loss) shows a steady decrease, indicating
+                improved performance as the model learns. - The orange line
+                (Validation Loss) fluctuates but decreases overall, reflecting
+                good generalization. A minimal gap between these lines suggests
+                the model avoids significant overfitting.
+              </figcaption>
+            </figure>
+
+            <!-- Filtering (Placeholder for Additional Graph) -->
+            <figure>
+              <img
+                src="{{ url_for('static', filename='assets/Screenshot 2024-12-01 143128.png') }}"
+                alt="Filtering Graph"
+                class="graph"
+              />
+              <figcaption>
+                <h3>Filtering</h3>
+                The "Original Image" represents the unprocessed visual input for
+                classification. The "Filtered Image (Blue)" highlights features
+                extracted by applying filters to the blue color channel.
+                Filtering enhances important patterns like edges and textures
+                for better model input. This step is crucial for understanding
+                how the model perceives visual data for classification.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

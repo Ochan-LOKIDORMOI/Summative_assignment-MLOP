@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Animal Classification Model</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="left-links">
+          <a href="/about.html" class="active">Home</a>
+        </div>
+        <div class="right-links">
+          <a href="/">Make Prediction</a>
+          <a href="/graphs.html">Graphs</a>
+          <a href="/retrain.html">Retrain</a>
+        </div>
+      </nav>
+      <header>
+        <h1>Animals Classification Model</h1>
+      </header>
+      <div class="content">
+        <h2>About This Application</h2>
+
+        <!-- About Section -->
+        <div class="section">
+          <img
+            src="{{ url_for('static', filename='assets/pexels-chiecharon-913215.jpg') }}"
+            alt="Overview of the Application"
+          />
+          <div class="text">
+            The <strong>Animal Classification Model</strong> is an innovative
+            web application designed to assist users in determining whether an
+            animal is classified as wild or domestic. It leverages advanced
+            machine learning techniques to deliver accurate results seamlessly.
+          </div>
+        </div>
+
+        <!-- Key Features Section -->
+        <div class="section">
+          <div class="text">
+            <h3>Key Features</h3>
+            <ul>
+              <li>Image upload for precise animal classification.</li>
+              <li>Real-time analysis through live camera integration.</li>
+              <li>Interactive dashboard with insightful data visualization.</li>
+              <li>Enhanced security for seamless user experience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- How It Works Section -->
+        <div class="section">
+          <div class="text">
+            <h3>How It Works</h3>
+            <p>
+              Upload an image, and the application processes it using a
+              pre-trained machine learning model. The results are then presented
+              in a clear and user-friendly format.
+            </p>
+          </div>
+        </div>
+
+        <!-- Applications Section -->
+        <div class="section">
+          <div class="text">
+            <h3>Applications</h3>
+            <ul>
+              <li>Wildlife conservation and animal monitoring.</li>
+              <li>Efficient farm animal identification and management.</li>
+              <li>Educational tools for students and researchers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="section">
+          <div class="text">
+            <h3>Our Mission</h3>
+            <p>
+              We aim to provide an intuitive tool that promotes animal
+              conservation while raising awareness about wildlife preservation
+              and sustainable coexistence between humans and animals.
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action Section -->
+        <div class="cta">
+          <h3>Ready to Explore?</h3>
+          <a href="/" class="button">Make a Prediction</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

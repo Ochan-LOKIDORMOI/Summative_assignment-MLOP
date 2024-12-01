@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal Classification Model</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navigation Bar -->
+      <nav>
+        <div class="left-links">
+          <a href="/about.html">Home</a>
+        </div>
+        <div class="right-links">
+          <a href="/" class="active">Make Prediction</a>
+          <a href="/graphs.html">Graphs</a>
+          <a href="/retrain.html">Retrain</a>
+        </div>
+      </nav>
+
+      <header>
+        <h1>Animals Classification Model</h1>
+      </header>
+
+      <!-- Main Content Section -->
+      <div class="contente">
+        <!-- Image Upload Form -->
+        <form
+          action="/"
+          method="POST"
+          enctype="multipart/form-data"
+          class="upload-form"
+        >
+          <label for="file-upload">Upload an Image for Prediction:</label>
+          <input
+            type="file"
+            name="file"
+            id="file-upload"
+            accept="image/*"
+            required
+          />
+          <button type="submit">Predict</button>
+
+          <!-- Results Section -->
+          {% if image_data and prediction %}
+          <div class="result">
+            <h2>Uploaded Image:</h2>
+            <img
+              src="data:image/jpeg;base64,{{ image_data }}"
+              alt="Uploaded Image"
+            />
+            <h2>Predicted Result:</h2>
+            <p>The image is classified as: <strong>{{ prediction }}</strong></p>
+          </div>
+          {% endif %} {% if error %}
+          <div class="error">
+            <p style="color: red">{{ error }}</p>
+          </div>
+          {% endif %}
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

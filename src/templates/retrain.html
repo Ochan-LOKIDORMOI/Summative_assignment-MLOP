@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Retrain Model</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left-links">
+          <a href="/about.html">Home</a>
+        </div>
+        <div class="right-links">
+          <a href="/">Make Prediction</a>
+          <a href="/graphs.html">Graphs</a>
+          <a href="/retrain.html" class="active">Retrain</a>
+        </div>
+      </nav>
+    </header>
+    <h1>Upload Your Dataset</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <label for="file">Upload ZIP file containing dataset:</label>
+      <input type="file" name="file" required />
+      <br /><br />
+      <button type="submit">Retrain</button>
+    </form>
+  </body>
+</html>
