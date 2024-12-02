@@ -1,53 +1,24 @@
 import os
-import random
 import cv2
 import numpy as np
 
-IMG_SIZE = 150
+def load_data(data_dir):
+    """Load images and labels from the specified directory."""
+    images = []
+    labels = []
+    class_names = os.listdir(data_dir)
 
-def preprocess_user_data(directory, categories):
-    data = []
+    for class_name in class_names:
+        class_dir = os.path.join(data_dir, class_name)
+        if os.path.isdir(class_dir):
+            for filename in os.listdir(class_dir):
+                img_path = os.path.join(class_dir, filename)
+                if os.path.isfile(img_path):
+                    img = cv2.imread(img_path)
+                    img = cv2.resize(img, (150, 150))  # Resize to expected input shape
+                    images.append(img)
+                    labels.append(class_names.index(class_name))  # Assign label based on folder index
 
-    for category in categories:
-        path = os.path.join(directory, category)
-        label = categories.index(category)
-
-        if not os.path.isdir(path):
-            print(f"Skipping invalid category path: {path}")
-            continue
-
-        has_images = False  # Track if valid images are found
-        for img in os.listdir(path):
-            img_path = os.path.join(path, img)
-            try:
-                if not img.lower().endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff')):
-                    print(f"Skipping non-image file: {img_path}")
-                    continue
-
-                img_arr = cv2.imread(img_path)
-                if img_arr is None:
-                    print(f"Failed to read image: {img_path}")
-                    continue
-
-                img_arr = cv2.resize(img_arr, (IMG_SIZE, IMG_SIZE))
-                data.append([img_arr, label])
-                has_images = True
-            except Exception as e:
-                print(f"Error processing file {img_path}: {e}")
-
-        if not has_images:
-            print(f"No valid images found in category: {category}")
-
-    if not data:
-        raise ValueError("No valid image data found in the provided dataset.")
-
-    random.shuffle(data)
-    X, y = [], []
-    for features, label in data:
-        X.append(features)
-        y.append(label)
-
-    X = np.array(X) / 255.0
-    y = np.array(y)
-
+    X = np.array(images, dtype='float32') / 255.0  # Normalize pixel values
+    y = np.array(labels)
     return X, y
