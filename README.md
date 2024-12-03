@@ -39,28 +39,29 @@ animal-classification/
 
 # Step 1: Clone the Repository
 
-`git clone https://github.com/Ochan-LOKIDORMOI/Summative_assignment-MLOP.git`
+```git clone https://github.com/Ochan-LOKIDORMOI/Summative_assignment-MLOP.git```
 
 # Step 2: Create a Virtual Environment
 
-```python -m venv venv
+```
+- python -m venv venv
 - source venv/bin/activate  # On Windows:
 - venv\Scripts\activate
 ```
 # Step 3: Install Dependencies
-`pip install -r requirements.txt`
+```pip install -r requirements.txt```
 
 # How to Use
 
 # **1. Start the FastAPI Server**
 Run the following command in the project directory:
 
-`uvicorn src.api:app --reload `
+```uvicorn src.api:app --reload ```
 
 **2. Start the Flask Application**
 Run the Flask application in a new terminal window:
 
-`python -m src.app`
+```python -m src.app```
 - The application will be accessible at http://127.0.0.1:5000
 
 # **3. Endpoints Overview (FastAPI)**
@@ -77,13 +78,16 @@ Run the Flask application in a new terminal window:
  ## Using Docker
 
 **1. Build the Docker image:**
-`docker build -t animal-classification-app .`
+
+```docker build -t animal-classification-app .```
 
 **2. Run the Docker container:**
-`docker run -p 8000:8000 animal-classification-app`
+
+```docker run -p 8000:8000 animal-classification-app```
 
 **3. Use Docker Compose (for Flask-FastAPI integration)**
-`docker-compose up`
+
+```docker-compose up```
 
 
 # **Future Improvements**
