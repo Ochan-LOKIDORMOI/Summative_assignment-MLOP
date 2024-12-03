@@ -8,6 +8,7 @@ body {
   background-size: cover;
   height: 100vh; /* Make body height 100% */
   display: flex;
+  background-color: #005b63;
   flex-direction: column;
 }
 
@@ -17,7 +18,7 @@ body {
   max-width: 1310px;
   margin: 0 auto;
   padding: 20px; /* Adjust padding */
-  background: rgba(1, 104, 65, 0.5);
+  background: #005b63;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   border-radius: 2px;
   display: block;
@@ -218,7 +219,7 @@ form button:hover {
   margin-top: 20px;
   text-align: center;
   padding: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #ccc;
   border-radius: 8px;
   width: 100%;
@@ -304,220 +305,66 @@ figcaption {
 .graph-grid figcaption {
   margin-top: 10px;
   font-size: 0.9em;
-  color: #555;
+  color: hsl(180, 60%, 99%);
 }
 
-/* Specific Styles for Retrain Page */
+/* Retrain Page Styles */
 .retrain-container {
-  margin-top: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.retrain-container header {
-  margin-bottom: 20px;
-}
-
-.retrain-container header h1 {
-  font-size: 2.4rem;
-  color: #00bcd4;
-  text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.retrain-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  max-width: 900px;
   margin: 0 auto;
-  max-width: 600px;
+  padding: 50px;
+  background: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: #be0f0f;
+  padding-top: 0;
 }
 
-.retrain-form .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.retrain-container h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #00bcd4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.retrain-form label {
+.retrain-container label {
   font-size: 1.2rem;
   font-weight: bold;
   color: #00bcd4;
+  display: block;
+  margin-bottom: 10px;
 }
 
-.retrain-form input[type="file"],
-.retrain-form input[type="number"] {
-  width: 100%;
+.retrain-container input[type="file"] {
+  display: block;
+  margin: 0 auto 20px;
   padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  max-width: 100%;
 }
 
-.retrain-form button {
+.retrain-container button {
   background-color: #00bcd4;
   color: #fff;
   padding: 10px 20px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.retrain-form button:hover {
+.retrain-container button:hover {
   background-color: #0097a7;
   transform: scale(1.05);
 }
 
-/* Success and Error Messages */
-.retrain-container .success,
-.retrain-container .error {
-  margin-top: 20px;
-  padding: 15px;
-  border-radius: 5px;
-  font-size: 1.1rem;
-}
-
-.retrain-container .success {
-  background-color: rgba(76, 175, 80, 0.2);
-  color: #4caf50;
-  border: 1px solid #4caf50;
-}
-
-.retrain-container .error {
-  background-color: rgba(244, 67, 54, 0.2);
-  color: #f44336;
-  border: 1px solid #f44336;
-}
-
-/* Mobile Adjustments for Retrain Page */
-@media (max-width: 768px) {
-  .retrain-form {
-    width: 90%;
-  }
-
-  .retrain-container header h1 {
-    font-size: 2rem;
-  }
-
-  .retrain-form button {
-    font-size: 1rem;
-  }
-}
-
-/* Specific Styles for Retrain Page */
-.retrain-container {
-  margin-top: 20px;
-  background-color: rgba(
-    1,
-    104,
-    65,
-    0.5
-  ); /* Matches the existing container background */
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
-  margin: 30px auto; /* Centers the container */
-}
-
-.retrain-container header h1 {
-  font-size: 2.4rem;
-  color: #00bcd4; /* Matches existing title color */
-  text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.upload-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
-
-.upload-form label {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff; /* Matches the general text color */
-}
-
-.upload-form input[type="file"] {
-  font-size: 1rem;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Slightly transparent background for input */
-  width: 80%; /* Adjust width for responsiveness */
-}
-
-.upload-form button {
-  background-color: #00bcd4; /* Matches button styles */
+.retrain-container .message {
+  background-color: #00bcd4;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.upload-form button:hover {
-  background-color: #0097a7; /* Darker hover effect */
-  transform: scale(1.05);
-}
-
-.success,
-.error {
-  margin-top: 20px;
   padding: 15px;
   border-radius: 5px;
-  font-size: 1.1rem;
-  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-.success {
-  background-color: rgba(
-    76,
-    175,
-    80,
-    0.2
-  ); /* Matches success feedback styling */
-  color: #4caf50;
-  border: 1px solid #4caf50;
-}
-
-.error {
-  background-color: rgba(244, 67, 54, 0.2); /* Matches error feedback styling */
-  color: #f44336;
-  border: 1px solid #f44336;
-}
-
-/* Mobile Adjustments for Retrain Page */
-@media (max-width: 768px) {
-  .retrain-container {
-    padding: 20px;
-    width: 90%;
-  }
-
-  .retrain-container header h1 {
-    font-size: 2rem;
-  }
-
-  .upload-form input[type="file"] {
-    width: 100%; /* Full width for small screens */
-  }
-
-  .upload-form button {
-    font-size: 1rem;
-  }
-}
-

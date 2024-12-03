@@ -18,16 +18,29 @@
         <div class="right-links">
           <a href="/">Make Prediction</a>
           <a href="/graphs.html">Graphs</a>
-          <a href="/retrain.html" class="active">Retrain</a>
+          <a href="/upload" class="active">Retrain</a>
         </div>
       </nav>
     </header>
-    <h1>Upload Your Dataset</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <label for="file">Upload ZIP file containing dataset:</label>
-      <input type="file" name="file" required />
-      <br /><br />
-      <button type="submit">Retrain</button>
-    </form>
+
+    <header>
+      <h1>Animals Classification Model</h1>
+    </header>
+
+    <div class="retrain-container">
+      <h1>Upload Dataset for Retraining</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Upload ZIP file containing dataset:</label>
+        <input type="file" id="file" name="file" required />
+        <br /><br />
+        <button type="submit">Retrain</button>
+      </form>
+
+      {% if message %}
+      <div class="message">
+        <p>{{ message }}</p>
+      </div>
+      {% endif %}
+    </div>
   </body>
 </html>
