@@ -1,5 +1,8 @@
 # Animal Classification Model
 
+![lion-background-desktop-wallpaper-preview](https://github.com/user-attachments/assets/d28db145-20d8-4db5-9467-de242cc02c60)
+
+
 ## Overview
 This project provides a system to classify animals as **domestic** or **wild** using image-based predictions. It features an end-to-end solution for model inference, retraining, and visualization. 
 
