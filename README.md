@@ -43,10 +43,8 @@ animal-classification/
 
 # Step 2: Create a Virtual Environment
 
-`
-- python -m venv venv
-- source venv/bin/activate  # On Windows: venv\Scripts\activate
-`
+`python -m venv venv`
+`source venv/bin/activate  # On Windows: venv\Scripts\activate`
 # Step 3: Install Dependencies
 `pip install -r requirements.txt`
 
