@@ -1,4 +1,4 @@
-# Animal Classification System
+# Animal Classification Model
 
 ## Overview
 This project provides a system to classify animals as **domestic** or **wild** using image-based predictions. It features an end-to-end solution for model inference, retraining, and visualization. 
@@ -14,21 +14,21 @@ This project provides a system to classify animals as **domestic** or **wild** u
 
 ## File Structure
 
-```plaintext
-animal-classification/
+```plaintext    
+
+Summative_Assignment-MLOP/
 ├── README.md          # Documentation
 ├── notebook/          # Jupyter Notebooks for initial experiments
-│   └── initial_model_training.ipynb
+│   └── Ochan_LOKIDORMOI_MLOP_Summative_Assignment.ipynb
 ├── src/               # Source code for the project
 │   ├── preprocessing.py  # Image preprocessing utilities
 │   ├── model.py          # ML model definition and training logic
 │   └── prediction.py     # Model inference and prediction
-├── data/              # Dataset directory
-│   ├── wild/           
-│   └── domestic/      
-├── models/            # Trained model storage
-│   ├── current_model.pkl
-│   └── backup_model.pkl
+├── data/              
+│   ├── test/           
+│   └── train/      
+├── models/           
+│   ├── pipe.pkl
 ```
 
 # **Installation Instructions**
