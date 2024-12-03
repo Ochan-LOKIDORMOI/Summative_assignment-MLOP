@@ -99,7 +99,7 @@ Run the Flask application in a new terminal window:
 - **Extended Functionality:** Support additional animal categories and include more advanced metrics.
 
 # Author
-https://github.com/Ochan-LOKIDORMOI?tab=repositories[Ochan Denmark LOKIDORMOI]
+[Ochan Denmark LOKIDORMOI](https://github.com/Ochan-LOKIDORMOI?tab=repositories )
 
 o.lokidormo@alustudent.com
 
