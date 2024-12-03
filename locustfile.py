@@ -6,10 +6,10 @@ class AnimalClassificationLoadTest(HttpUser):
     """
     Simulates user behavior for testing the Animal Classification APIs.
     """
-    wait_time = between(1, 2)  # Simulate users waiting 1 to 3 seconds between requests
+    wait_time = between(1, 3)
 
     # Dynamically determine paths for test files
-    base_path = os.path.dirname(__file__)  # Get the directory of the locustfile
+    base_path = os.path.dirname(__file__)
     image_path = os.path.join(base_path, "locust_test_image", "test_image.jpg")
     zip_path = os.path.join(base_path, "locust_test_image", "dataimages.zip")
 
@@ -27,7 +27,7 @@ class AnimalClassificationLoadTest(HttpUser):
     @task
     def test_fastapi_predict(self):
         """
-        Test the `/predict` endpoint of the FastAPI application.
+        Test the `/predict` endpoint of the FastAPI application for image predictions.
         """
         with open(self.image_path, "rb") as image:
             files = {"file": ("test_image.jpg", image, "image/jpeg")}
@@ -60,20 +60,3 @@ class AnimalClassificationLoadTest(HttpUser):
             print("Flask Index Loaded Successfully!")
         else:
             print("Flask Index Failed!")
-
-    @task
-    def test_flask_retrain(self):
-        """
-        Test the Flask `/upload` route with a dummy zip file.
-        """
-        if os.path.exists(self.zip_path):
-            with open(self.zip_path, "rb") as zip_file:
-                files = {"file": ("dataimages.zip", zip_file, "application/zip")}
-                response = self.client.post("/upload", files=files)
-
-            if response.status_code == 200:
-                print("Flask Retrain Route Worked Successfully!")
-            else:
-                print(f"Flask Retrain Failed: {response.status_code}")
-        else:
-            print(f"Zip file for retraining not found at {self.zip_path}")
