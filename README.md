@@ -29,3 +29,9 @@ Summative_Assignment-MLOP/
 │   └── train/      
 ├── models/           
 │   ├── pipe.pkl
+
+# *Installation Instructions*
+ ## **Prerequisites**
+- Python 3.8+
+- Virtual environment (venv or conda)
+- Docker (optional for deployment)
