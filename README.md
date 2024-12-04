@@ -98,6 +98,10 @@ Run the Flask application in a new terminal window:
 - **GPU Support:** Integrate GPU-based model training for improved performance.
 - **Extended Functionality:** Support additional animal categories and include more advanced metrics.
 
+# **LIVE DEMO VIDEO**
+
+[Animals Classification](https://www.youtube.com/watch?v=Q_veatBS8aE)
+
 # Author
 [Ochan Denmark LOKIDORMOI](https://github.com/Ochan-LOKIDORMOI?tab=repositories )
 
